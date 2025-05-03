@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RiseChain Shop</title>
+  <style>
+    body {
+      background: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo img {
+      height: 60px;
+    }
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #007BFF;
+      display: inline-block;
+    }
+
+    .for-you-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .for-you-item {
+      display: flex;
+      background: #f1f1f1;
+      padding: 12px;
+      border-radius: 10px;
+      align-items: center;
+    }
+    .for-you-item img {
+      width: 120px;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 16px;
+      cursor: pointer;
+    }
+    .for-you-details h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+    .for-you-details p {
+      margin: 4px 0;
+    }
+    .shop-button {
+      padding: 6px 12px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* Modal for Full Image */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: 10% auto;
+      display: block;
+      max-width: 90%;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 40px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="https://files.catbox.moe/your-logo.png" alt="RiseChain Logo">
+  </div>
+
+  <div class="section-title">For You</div>
+  <div class="for-you-list">
+
+    <!-- Product 1 -->
+    <div class="for-you-item">
+      <img src="https://files.catbox.moe/ex1pr2.jpg" alt="Redmi 10A" onclick="openModal(this.src)">
+      <div class="for-you-details">
+        <h3>Redmi 10A – 4GB/64GB</h3>
+        <p class="price">PKR 30,000</p>
+        <p>Description: Redmi 10A with 13MP Camera, 5000mAh battery, MediaTek Helio G25.</p>
+        <a class="shop-button"
+           href="https://wa.me/923301345700?text=Hello!%20I%20want%20to%20buy%20Redmi%2010A%20(4GB%2F64GB)%20for%20PKR%2030%2C000.%0ADescription%3A%20Redmi%2010A%20with%2013MP%20Camera%2C%205000mAh%20battery%2C%20MediaTek%20Helio%20G25.%0AImage%3A%20https%3A%2F%2Ffiles.catbox.moe%2Fex1pr2.jpg"
+           target="_blank">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="for-you-item">
+      <img src="https://files.catbox.moe/njaqfg.jpg" alt="Samsung A12" onclick="openModal(this.src)">
+      <div class="for-you-details">
+        <h3>Samsung A12 – 4GB/128GB</h3>
+        <p class="price">PKR 35,000</p>
+        <p>Description: Samsung A12 with quad camera, 5000mAh battery, fast performance.</p>
+        <a class="shop-button"
+           href="https://wa.me/923301345700?text=Hello!%20I%20want%20to%20buy%20Samsung%20A12%20(4GB%2F128GB)%20for%20PKR%2035%2C000.%0ADescription%3A%20Samsung%20A12%20with%20quad%20camera%2C%205000mAh%20battery%2C%20fast%20performance.%0AImage%3A%20https%3A%2F%2Ffiles.catbox.moe%2Fnjaqfg.jpg"
+           target="_blank">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="for-you-item">
+      <img src="https://files.catbox.moe/9n4otz.jpg" alt="Vivo Y20" onclick="openModal(this.src)">
+      <div class="for-you-details">
+        <h3>Vivo Y20 – 4GB/64GB</h3>
+        <p class="price">PKR 28,000</p>
+        <p>Description: Vivo Y20 with fingerprint sensor, side unlock, Snapdragon 460.</p>
+        <a class="shop-button"
+           href="https://wa.me/923301345700?text=Hello!%20I%20want%20to%20buy%20Vivo%20Y20%20(4GB%2F64GB)%20for%20PKR%2028%2C000.%0ADescription%3A%20Vivo%20Y20%20with%20fingerprint%20sensor%2C%20side%20unlock%2C%20Snapdragon%20460.%0AImage%3A%20https%3A%2F%2Ffiles.catbox.moe%2F9n4otz.jpg"
+           target="_blank">Shop Now</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Full Image Modal -->
+  <div id="imgModal" class="modal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById("imgModal").style.display = "block";
+      document.getElementById("modalImage").src = src;
+    }
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
